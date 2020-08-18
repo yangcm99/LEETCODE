@@ -1,1 +1,1 @@
-# LEETCODE 每日学习CPP。
+# LEETCODE 每日学习
