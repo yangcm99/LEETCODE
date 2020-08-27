@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        int n = s.size();
+        if(n % 2 == 1)
+        return false;
+        map<char,char> pairs = {
+            {')','('},
+            {'}','{'},
+            {']','['}    
+        };
+        stack<char> t;
+        for(auto x:s)
+        {
+            if(pairs.count(x)){
+                if(t.empty() || t.top() != pairs[x]){
+                return false;
+                }
+                t.pop();
+            }
+            else
+            t.push(x);
+        }
+        return t.empty ();
+        
+    }
+};
